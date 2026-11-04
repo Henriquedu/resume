@@ -1,0 +1,326 @@
+/* ===================================================================
+   cv.css — resume page only. Layered on top of site.css tokens.
+   Screen: comfortable document. Print: clean ATS-friendly A4.
+   =================================================================== */
+
+/* ---------- action bar ---------- */
+.cv-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0 0 30px;
+}
+
+.cv-bar .link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 15px;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-pill);
+  background: var(--card);
+  color: var(--text-soft);
+  font-size: 13.5px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: color .15s var(--ease), background .15s var(--ease), border-color .15s var(--ease);
+}
+.cv-bar .link:hover {
+  color: var(--text);
+  background: var(--accent-soft);
+  border-color: var(--accent);
+  text-decoration: none;
+}
+.cv-bar .link.primary {
+  background: var(--accent-strong);
+  border-color: var(--accent-strong);
+  color: #fff;
+}
+.cv-bar .link.primary:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+/* ---------- head ---------- */
+.cv-head {
+  padding-bottom: 24px;
+  margin-bottom: 8px;
+  border-bottom: 1px solid var(--line);
+}
+
+.cv-head h1 {
+  margin: 0 0 8px;
+  font-size: clamp(24px, 3.6vw, 30px);
+  letter-spacing: -.02em;
+}
+
+.cv-role {
+  margin: 0 0 12px;
+  color: var(--accent);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+}
+
+.cv-contact {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 8px;
+  margin: 0 0 4px;
+  color: var(--muted);
+  font-size: 14.5px;
+}
+.cv-contact a { color: var(--text-soft); }
+.cv-contact a:hover { color: var(--accent); }
+.cv-contact span { color: var(--line-strong); }
+
+.cv-loc { margin: 0; color: var(--faint); font-size: 14px; }
+
+/* ---------- sections ---------- */
+.cv section { margin-top: 34px; }
+.cv section:first-of-type { margin-top: 28px; }
+
+.cv h2 {
+  margin: 0 0 14px;
+  padding-bottom: 7px;
+  border-bottom: 1px solid var(--line);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--text);
+}
+
+.cv section > p {
+  margin: 0;
+  color: var(--text-soft);
+  font-size: 15px;
+  line-height: 1.7;
+  max-width: 72ch;
+}
+
+/* ---------- lists ---------- */
+.cv ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cv ul.skills > li {
+  position: relative;
+  padding-left: 16px;
+  margin-bottom: 7px;
+  color: var(--text-soft);
+  font-size: 14.5px;
+  line-height: 1.6;
+}
+.cv ul.skills > li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: .68em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--line-strong);
+}
+.cv ul.skills > li strong { color: var(--text); font-weight: 600; }
+
+/* job bullets get a slightly softer marker */
+.cv .job ul li {
+  position: relative;
+  padding-left: 17px;
+  margin-bottom: 5px;
+  color: var(--text-soft);
+  font-size: 14.5px;
+  line-height: 1.62;
+}
+.cv .job ul li::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: .68em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--line-strong);
+}
+
+/* ---------- jobs ---------- */
+.cv .job {
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line);
+}
+.cv .job:first-of-type { padding-top: 0; }
+.cv .job:last-of-type { border-bottom: 0; padding-bottom: 0; }
+
+.cv .job-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2px 16px;
+  margin-bottom: 10px;
+}
+.cv .job-header h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 650;
+  letter-spacing: -.01em;
+  color: var(--text);
+}
+.cv .job-header h4 {
+  margin: 2px 0 0;
+  color: var(--accent);
+  font-size: 13.5px;
+  font-weight: 600;
+  letter-spacing: .01em;
+}
+.cv .date {
+  color: var(--faint);
+  font-size: 13px;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- certifications ---------- */
+.cv .certs > li {
+  padding-left: 0 !important;
+  margin-bottom: 12px !important;
+}
+.cv .certs > li::before { display: none !important; }
+.cv .certs strong { display: block; }
+.cv .certs .meta {
+  display: block;
+  margin-top: 1px;
+  color: var(--faint);
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- projects on cv ---------- */
+.cv .project {
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
+}
+.cv .project:first-of-type { padding-top: 0; }
+.cv .project:last-of-type { border-bottom: 0; padding-bottom: 0; }
+
+.cv .project h3 {
+  margin: 0 0 5px;
+  font-size: 15.5px;
+  font-weight: 650;
+}
+.cv .project h3 a { color: var(--text); }
+.cv .project h3 a:hover { color: var(--accent); text-decoration: none; }
+
+.cv .project p {
+  margin: 4px 0;
+  color: var(--text-soft);
+  font-size: 14.5px;
+  line-height: 1.6;
+}
+.cv .project .tech { color: var(--muted); font-size: 13.5px; }
+.cv .project .tech strong { color: var(--text-soft); }
+.cv .project .tech-links { margin-top: 6px; }
+.cv .project .tech-links a {
+  font-size: 13.5px;
+  font-weight: 600;
+}
+
+.cv-foot {
+  margin-top: 44px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+  color: var(--faint);
+  font-size: 13px;
+}
+
+/* ---------- responsive ---------- */
+@media (max-width: 620px) {
+  .cv .job-header { flex-direction: column; gap: 2px; }
+  .cv .date { margin-top: 2px; }
+  .cv section { margin-top: 28px; }
+  .cv-role { font-size: 13px; }
+  .cv-contact { font-size: 13.5px; }
+  .cv section > p,
+  .cv .job ul li,
+  .cv ul.skills > li,
+  .cv .project p { font-size: 14px; }
+}
+
+/* ---------- print: clean A4, ATS-friendly ---------- */
+@media print {
+  @page { size: A4; margin: 14mm 15mm; }
+
+  html, body { background: #fff !important; }
+  body.cv {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 10pt;
+    line-height: 1.42;
+    color: #000;
+  }
+
+  .noprint, .topbar, .skip, .back { display: none !important; }
+
+  .cv main { max-width: none; padding: 0; margin: 0; }
+
+  .cv-head {
+    padding-bottom: 10pt;
+    margin-bottom: 2pt;
+    border-bottom: 1pt solid #000;
+  }
+  .cv-head h1 { font-size: 18pt; margin: 0 0 3pt; }
+  .cv-role { color: #000; font-size: 10pt; letter-spacing: .06em; margin-bottom: 6pt; }
+  .cv-contact, .cv-loc { font-size: 9pt; color: #000; gap: 2pt 6pt; }
+  .cv-contact a, .cv-contact span, .cv-loc { color: #000 !important; }
+
+  .cv section { margin-top: 11pt; break-inside: auto; }
+  .cv section:first-of-type { margin-top: 8pt; }
+
+  .cv h2 {
+    font-size: 9.5pt;
+    letter-spacing: .1em;
+    margin: 0 0 5pt;
+    padding-bottom: 2pt;
+    border-bottom: .6pt solid #999;
+    color: #000;
+  }
+
+  .cv section > p { font-size: 9.5pt; line-height: 1.42; max-width: none; }
+
+  .cv .job { padding: 7pt 0; border-bottom: .4pt solid #ddd; break-inside: avoid; }
+  .cv .job-header { margin-bottom: 3pt; }
+  .cv .job-header h3 { font-size: 10pt; }
+  .cv .job-header h4 { font-size: 9.5pt; color: #000; font-style: italic; }
+  .cv .date { font-size: 9pt; color: #333; }
+
+  .cv .job ul li,
+  .cv ul.skills > li,
+  .cv .project p,
+  .cv .project .tech { font-size: 9.5pt; line-height: 1.4; color: #000; }
+
+  .cv .job ul li { margin-bottom: 2pt; }
+  .cv ul.skills > li { margin-bottom: 2pt; }
+  .cv ul.skills > li strong,
+  .cv .project .tech strong { color: #000; }
+
+  .cv .job ul li::before,
+  .cv ul.skills > li::before {
+    background: #000;
+    width: 3pt; height: 3pt;
+    top: .58em;
+  }
+
+  .cv .certs > li { margin-bottom: 4pt !important; }
+  .cv .certs .meta { font-size: 8.5pt; color: #333; }
+
+  .cv .project { padding: 6pt 0; break-inside: avoid; }
+  .cv .project h3 { font-size: 9.8pt; }
+
+  .cv a { color: #000 !important; text-decoration: none; }
+
+  /* keep two-column-friendly break behaviour */
+  .cv section, .cv .job, .cv .project { break-inside: avoid-page; }
+  .cv h2 { break-after: avoid; }
+}
