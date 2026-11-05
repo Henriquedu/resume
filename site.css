@@ -315,8 +315,10 @@ h1 {
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 2px;
-  padding: 18px 16px 16px;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+  padding: 26px 16px 22px;
   background: var(--card);
   border: 1px solid var(--line);
   border-radius: var(--radius);
@@ -338,18 +340,18 @@ h1 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 34px;
-  height: 34px;
-  margin-bottom: 12px;
-  border-radius: var(--radius-sm);
+  width: 46px;
+  height: 46px;
+  margin-bottom: 2px;
+  border-radius: 12px;
   background: var(--accent-soft);
   color: var(--accent);
 }
-.btn .ico svg { width: 18px; height: 18px; }
+.btn .ico svg { width: 22px; height: 22px; }
 
 .btn strong {
   display: block;
-  font-size: 16.5px;
+  font-size: 17px;
   font-weight: 650;
   letter-spacing: -.01em;
 }
@@ -365,19 +367,13 @@ h1 {
   right: 15px;
   color: var(--faint);
   font-size: 15px;
-  transition: transform .18s var(--ease), color .18s var(--ease);
+  opacity: 0;
+  transition: transform .18s var(--ease), color .18s var(--ease), opacity .18s var(--ease);
 }
 .btn:hover .arrow,
-.btn:focus-visible .arrow { transform: translate(2px, -2px); color: var(--accent); }
+.btn:focus-visible .arrow { transform: none; color: var(--accent); opacity: 1; }
 
-/* ---------- 6b. Home CTA ---------- */
-.cta-row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 12px;
-  margin: 30px 0 0;
-}
+/* ---------- 6b. CTA button (usado na 404) ---------- */
 .cta {
   display: inline-flex;
   align-items: center;
@@ -583,8 +579,6 @@ h2.page-title {
   }
   .topbar nav a { padding: 12px 14px; }   /* >=44px tap target */
   .theme-toggle { width: 44px; height: 44px; }
-  .cta-row { flex-direction: column; align-items: stretch; }
-  .cta { width: 100%; }
 }
 
 @media (max-width: 430px) {
@@ -611,7 +605,7 @@ h2.page-title {
 
 @media print {
   body { background: #fff; color: #000; }
-  .topbar, .theme-toggle, .skip, footer .noprint, .back, .cta-row { display: none !important; }
+  .topbar, .theme-toggle, .skip, footer .noprint, .back { display: none !important; }
   main { max-width: none; padding: 0; }
   a { color: #000; text-decoration: none; }
   .proj, .panel, .repo { box-shadow: none; border: 1px solid #ccc; break-inside: avoid; }

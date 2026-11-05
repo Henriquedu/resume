@@ -198,36 +198,6 @@
   font-variant-numeric: tabular-nums;
 }
 
-/* ---------- projects on cv ---------- */
-.cv .project {
-  padding: 14px 0;
-  border-bottom: 1px solid var(--line);
-}
-.cv .project:first-of-type { padding-top: 0; }
-.cv .project:last-of-type { border-bottom: 0; padding-bottom: 0; }
-
-.cv .project h3 {
-  margin: 0 0 5px;
-  font-size: 15.5px;
-  font-weight: 650;
-}
-.cv .project h3 a { color: var(--text); }
-.cv .project h3 a:hover { color: var(--accent); text-decoration: none; }
-
-.cv .project p {
-  margin: 4px 0;
-  color: var(--text-soft);
-  font-size: 14.5px;
-  line-height: 1.6;
-}
-.cv .project .tech { color: var(--muted); font-size: 13.5px; }
-.cv .project .tech strong { color: var(--text-soft); }
-.cv .project .tech-links { margin-top: 6px; }
-.cv .project .tech-links a {
-  font-size: 13.5px;
-  font-weight: 600;
-}
-
 .cv-foot {
   margin-top: 44px;
   padding-top: 18px;
@@ -245,8 +215,7 @@
   .cv-contact { font-size: 13.5px; }
   .cv section > p,
   .cv .job ul li,
-  .cv ul.skills > li,
-  .cv .project p { font-size: 14px; }
+  .cv ul.skills > li { font-size: 14px; }
 }
 
 /* ---------- print: clean A4, ATS-friendly ---------- */
@@ -296,14 +265,11 @@
   .cv .date { font-size: 9pt; color: #333; }
 
   .cv .job ul li,
-  .cv ul.skills > li,
-  .cv .project p,
-  .cv .project .tech { font-size: 9.5pt; line-height: 1.4; color: #000; }
+  .cv ul.skills > li { font-size: 9.5pt; line-height: 1.4; color: #000; }
 
   .cv .job ul li { margin-bottom: 2pt; }
   .cv ul.skills > li { margin-bottom: 2pt; }
-  .cv ul.skills > li strong,
-  .cv .project .tech strong { color: #000; }
+  .cv ul.skills > li strong { color: #000; }
 
   .cv .job ul li::before,
   .cv ul.skills > li::before {
@@ -315,12 +281,9 @@
   .cv .certs > li { margin-bottom: 4pt !important; }
   .cv .certs .meta { font-size: 8.5pt; color: #333; }
 
-  .cv .project { padding: 6pt 0; break-inside: avoid; }
-  .cv .project h3 { font-size: 9.8pt; }
-
   .cv a { color: #000 !important; text-decoration: none; }
 
   /* keep two-column-friendly break behaviour */
-  .cv section, .cv .job, .cv .project { break-inside: avoid-page; }
+  .cv section, .cv .job { break-inside: avoid-page; }
   .cv h2 { break-after: avoid; }
 }
